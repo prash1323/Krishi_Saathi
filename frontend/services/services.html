@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Krishi Saathi Service Portal – Explore all intelligent agricultural services in one place." />
+  <title>Service Portal – Krishi Saathi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="service.css" />
+</head>
+<body>
+
+  <!-- ╔══════════════════════════════════════════════════════════╗
+       ║  #services-header  ·  Sticky glassmorphism header       ║
+       ╚══════════════════════════════════════════════════════════╝ -->
+  <header id="services-header" role="banner">
+    <div class="sh-inner">
+
+      <!-- Left: Logo -->
+      <a href="../landing_page/index.html" class="sh-logo" aria-label="Krishi Saathi Home">
+        <div class="sh-logo-icon" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="18" fill="url(#hLogo)"/>
+            <path d="M18 28C18 28 9 21 9 14c0-4 4-7 9-5 5-2 9 1 9 5 0 7-9 14-9 14Z" fill="white" opacity="0.92"/>
+            <line x1="18" y1="10" x2="18" y2="26" stroke="#2E7D32" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18" y1="16" x2="14" y2="12" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="18" y1="16" x2="22" y2="12" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="hLogo" x1="0" y1="0" x2="36" y2="36">
+                <stop offset="0%" stop-color="#2E7D32"/>
+                <stop offset="100%" stop-color="#66BB6A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="sh-logo-text">Krishi Saathi</span>
+      </a>
+
+      <!-- Center: Page title -->
+      <div class="sh-page-title" aria-label="Current page">
+        <span class="sh-page-label">Service Portal</span>
+      </div>
+
+      <!-- Right: Controls -->
+      <div class="sh-controls">
+        <button class="sh-theme-btn" id="theme-toggle" aria-label="Toggle dark mode"title="Toggle theme">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+        <a href="../landing_page/index.html" class="sh-home-btn">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M1 6.5L8 1l7 5.5V15H10v-4H6v4H1V6.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+          </svg>
+          Home
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ╔══════════════════════════════════════════════════════════╗
+         ║  #services-intro  ·  Heading + search bar              ║
+         ╚══════════════════════════════════════════════════════════╝ -->
+    <section id="services-intro" aria-labelledby="intro-heading">
+      <div class="si-bg-glow" aria-hidden="true"></div>
+      <div class="container">
+
+        <div class="si-eyebrow">
+          <span class="dot-pulse" aria-hidden="true"></span>
+          Intelligent Agriculture Platform
+        </div>
+
+        <h1 id="intro-heading" class="si-heading">
+          Explore Smart<br/><em>Agricultural Services</em>
+        </h1>
+
+        <p class="si-sub">
+          Krishi Saathi brings precision AI tools directly to farmers — from soil
+          analysis and disease detection to live mandi prices and government scheme
+          matching. Every service is designed to reduce losses, maximise yield, and
+          put informed decisions in your hands.
+        </p>
+
+        <!-- Search -->
+        <div class="search-wrap" role="search">
+          <label for="service-search" class="sr-only">Search services</label>
+          <div class="search-box">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M14.5 14.5L18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <input
+              type="search"
+              id="service-search"
+              class="search-input"
+              placeholder="Search for a service…"
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <kbd class="search-hint" aria-hidden="true">⌘K</kbd>
+          </div>
+          <p class="search-status sr-only" id="search-status" aria-live="polite" aria-atomic="true"></p>
+        </div>
+
+        <!-- Quick filter pills -->
+        <div class="filter-pills" role="group" aria-label="Filter by category">
+          <button class="pill active" data-filter="all">All Services</button>
+          <button class="pill" data-filter="crop">Crop</button>
+          <button class="pill" data-filter="soil">Soil</button>
+          <button class="pill" data-filter="weather">Weather</button>
+          <button class="pill" data-filter="market">Market</button>
+          <button class="pill" data-filter="planning">Planning</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════╗
+         ║  #featured-service  ·  AI Chatbot hero card            ║
+         ╚══════════════════════════════════════════════════════════╝ -->
+    <section id="featured-service" aria-labelledby="featured-heading">
+      <div class="container">
+
+        <div class="featured-card" role="article">
+          <!-- Decorative background shapes -->
+          <div class="fc-orb fc-orb--1" aria-hidden="true"></div>
+          <div class="fc-orb fc-orb--2" aria-hidden="true"></div>
+          <div class="fc-grid" aria-hidden="true"></div>
+
+          <div class="fc-content">
+            <div class="fc-badge">
+              <span aria-hidden="true">✦</span> Featured Service
+            </div>
+            <div class="fc-icon" aria-hidden="true">🤖</div>
+            <h2 id="featured-heading" class="fc-title">AI Farmer Assistant</h2>
+            <p class="fc-desc">
+              Ask any farming question in plain language and receive instant, personalised answers.
+              Get crop suggestions, disease insights, fertilizer guidance, sowing schedules,
+              and market timing advice — all through a single intelligent conversation.
+            </p>
+            <div class="fc-meta">
+              <span class="fc-badge-sm">🌐 Multilingual</span>
+              <span class="fc-badge-sm">⚡ Instant Response</span>
+              <span class="fc-badge-sm">🆓 Free Forever</span>
+            </div>
+            <a href="chatbot.html" class="fc-cta" aria-label="Start chatting with AI Farmer Assistant">
+              Start Chat
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="fc-visual" aria-hidden="true">
+            <div class="fc-chat-preview">
+              <div class="chat-bubble chat-bubble--user">How do I treat yellow rust in wheat?</div>
+              <div class="chat-bubble chat-bubble--ai">
+                <span class="chat-ai-icon">🤖</span>
+                Yellow rust (Puccinia striiformis) is best treated with propiconazole 25% EC at 0.1%. Apply at early infection stage…
+              </div>
+              <div class="chat-bubble chat-bubble--user">What's the cost per acre?</div>
+              <div class="chat-typing">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════╗
+         ║  #services-grid  ·  Dynamic service cards              ║
+         ╚══════════════════════════════════════════════════════════╝ -->
+    <section id="services-grid" aria-labelledby="grid-heading">
+      <div class="container">
+
+        <div class="sg-header">
+          <h2 id="grid-heading" class="sg-heading">All Services</h2>
+          <span class="sg-count" id="service-count" aria-live="polite">11 services</span>
+        </div>
+
+        <!-- Empty state (hidden by default) -->
+        <div class="empty-state" id="empty-state" hidden aria-hidden="true">
+          <div class="empty-icon">🔍</div>
+          <h3>No services found</h3>
+          <p>Try a different keyword or <button class="empty-reset" id="empty-reset">clear the search</button>.</p>
+        </div>
+
+        <!-- JS renders cards here -->
+        <div class="cards-grid" id="cards-grid" role="list"></div>
+
+      </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════╗
+         ║  #impact-section  ·  Stats strip                       ║
+         ╚══════════════════════════════════════════════════════════╝ -->
+    <section id="impact-section" aria-labelledby="impact-heading">
+      <div class="container">
+        <h2 id="impact-heading" class="sr-only">Platform Impact</h2>
+        <div class="impact-strip">
+
+          <div class="impact-stat">
+            <div class="impact-num" data-target="12">0</div>
+            <div class="impact-label">Smart Services</div>
+            <div class="impact-sub">and growing</div>
+          </div>
+
+          <div class="impact-divider" aria-hidden="true"></div>
+
+          <div class="impact-stat">
+            <div class="impact-num">24/7</div>
+            <div class="impact-label">AI Support</div>
+            <div class="impact-sub">always available</div>
+          </div>
+
+          <div class="impact-divider" aria-hidden="true"></div>
+
+          <div class="impact-stat">
+            <div class="impact-num" data-target="50000">0</div>
+            <div class="impact-label">Farmers Served</div>
+            <div class="impact-sub">across India</div>
+          </div>
+
+          <div class="impact-divider" aria-hidden="true"></div>
+
+          <div class="impact-stat">
+            <div class="impact-num">Real-time</div>
+            <div class="impact-label">Data Insights</div>
+            <div class="impact-sub">live updates</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ╔══════════════════════════════════════════════════════════╗
+       ║  #services-footer                                       ║
+       ╚══════════════════════════════════════════════════════════╝ -->
+  <footer id="services-footer" role="contentinfo">
+    <div class="container">
+      <div class="sf-inner">
+
+        <div class="sf-brand">
+          <div class="sf-logo">
+            <svg width="26" height="26" viewBox="0 0 36 36" fill="none">
+              <circle cx="18" cy="18" r="18" fill="url(#fLogo)"/>
+              <path d="M18 28C18 28 9 21 9 14c0-4 4-7 9-5 5-2 9 1 9 5 0 7-9 14-9 14Z" fill="white" opacity="0.9"/>
+              <line x1="18" y1="10" x2="18" y2="26" stroke="#2E7D32" stroke-width="2" stroke-linecap="round"/>
+              <line x1="18" y1="16" x2="14" y2="12" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="18" y1="16" x2="22" y2="12" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="fLogo" x1="0" y1="0" x2="36" y2="36">
+                  <stop offset="0%" stop-color="#4CAF50"/>
+                  <stop offset="100%" stop-color="#66BB6A"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span>Krishi Saathi</span>
+          </div>
+          <p>Smart farming tools built for India's agricultural community.</p>
+          <div class="sf-contact">
+            <a href="mailto:support@krishisaathi.in" class="sf-contact-item">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              support@krishisaathi.in
+            </a>
+            <a href="tel:+911800KRISHI" class="sf-contact-item">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 2h3l1.5 3.5L6 7a9 9 0 004 4l1.5-1.5L15 11v3a1 1 0 01-1 1C6 14 2 9.5 2 3a1 1 0 011-1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              1800-KRISHI (Toll Free)
+            </a>
+          </div>
+        </div>
+
+        <nav class="sf-links" aria-label="Footer navigation">
+          <div class="sf-col">
+            <h4>Platform</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="chatbot.html">AI Assistant</a></li>
+              <li><a href="schemes.html">Gov. Schemes</a></li>
+            </ul>
+          </div>
+          <div class="sf-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Feedback</a></li>
+            </ul>
+          </div>
+          <div class="sf-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#">Accessibility</a></li>
+            </ul>
+          </div>
+        </nav>
+
+      </div>
+
+      <div class="sf-bottom">
+        <p>© 2026 Krishi Saathi &nbsp;|&nbsp; Smart Farming for Smarter Futures</p>
+        <p class="sf-tagline">Jai Kisan &nbsp;·&nbsp; जय किसान</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="services.js"></script>
+</body>
+</html>

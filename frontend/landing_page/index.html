@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Krishi Saathi – Intelligent agricultural assistance platform for Indian farmers." />
+  <title>Krishi Saathi – Smart Farming Starts Here</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+ 
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       #top-header – Sticky glassmorphism header
+  ═══════════════════════════════════════════════════════ -->
+  <header id="top-header">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <div class="logo-group">
+        <div class="logo-icon" aria-label="Krishi Saathi Logo">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="18" fill="url(#logoGrad)"/>
+            <path d="M18 28 C18 28 9 21 9 14 C9 10 13 7 18 9 C23 7 27 10 27 14 C27 21 18 28 18 28Z" fill="white" opacity="0.9"/>
+            <path d="M18 10 L18 26" stroke="#2E7D32" stroke-width="2" stroke-linecap="round"/>
+            <path d="M18 16 L14 12" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M18 16 L22 12" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36">
+                <stop offset="0%" stop-color="#2E7D32"/>
+                <stop offset="100%" stop-color="#66BB6A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">Krishi Saathi</span>
+      </div>
+
+      <!-- Right side controls -->
+      <div class="header-right">
+        <div class="live-clock" id="live-clock" aria-live="polite">
+          <span id="clock-time">00:00:00</span>
+        </div>
+
+        <!-- Theme toggle (React mount point) -->
+        <div id="theme-toggle-root"></div>
+
+        <nav class="header-actions">
+          <a href="#" class="btn-ghost" id="login-btn">Login</a>
+          <a href="#" class="btn-primary" id="signup-btn">Sign Up</a>
+        </nav>
+
+        <!-- Mobile hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════
+       #navigation-panel – Main nav with React dropdown
+  ═══════════════════════════════════════════════════════ -->
+  <nav id="navigation-panel" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#welcome-section" class="nav-link active">Home</a></li>
+        <li><a href="#vision-section" class="nav-link">About</a></li>
+        <li><a href="#benefits-section" class="nav-link">Features</a></li>
+        <!-- React dropdown mount -->
+        <li><a href="../services/services.html" class="nav-link">Services</a></li>
+        <li><a href="#support-center" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <ul class="mobile-nav-links">
+      <li><a href="#welcome-section">Home</a></li>
+      <li><a href="#vision-section">About</a></li>
+      <li><a href="#benefits-section">Features</a></li>
+      <li><a href="../services/services.html">Services</a></li>
+      <li><a href="#support-center">Contact</a></li>
+    </ul>
+  </div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════════════════
+         #welcome-section – Hero
+    ═══════════════════════════════════════════════════════ -->
+    <section id="welcome-section" aria-labelledby="hero-heading">
+      <div class="hero-bg-layers">
+        <div class="hero-grain"></div>
+        <div class="hero-glow hero-glow--green"></div>
+        <div class="hero-glow hero-glow--brown"></div>
+      </div>
+
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span class="badge-dot"></span>
+            Powered by AI &amp; Machine Learning
+          </div>
+          <h1 id="hero-heading" class="hero-heading">
+            Smart Farming<br/><em>Starts Here</em>
+          </h1>
+          <p class="hero-sub">
+            Farmer-focused intelligent agriculture assistance —<br/>
+            from seed to harvest, we guide every step.
+          </p>
+          <div class="hero-actions">
+            <a href="#service-hub" class="btn-cta">Get Started →</a>
+            <a href="#vision-section" class="btn-outline">Explore More</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><span class="stat-num">50K+</span><span class="stat-label">Farmers</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num">7</span><span class="stat-label">Services</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Accuracy</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-illustration">
+            <div class="illus-card illus-card--1">
+              <div class="illus-icon">🌾</div>
+              <div class="illus-label">Crop Health</div>
+              <div class="illus-value good">Excellent</div>
+            </div>
+            <div class="illus-card illus-card--2">
+              <div class="illus-icon">🌤️</div>
+              <div class="illus-label">Weather</div>
+              <div class="illus-value">28°C · Clear</div>
+            </div>
+            <div class="illus-card illus-card--3">
+              <div class="illus-icon">📈</div>
+              <div class="illus-label">Wheat Price</div>
+              <div class="illus-value good">₹2,240/qtl</div>
+            </div>
+            <div class="illus-center">
+              <svg class="leaf-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="leafGrad" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#66BB6A" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#2E7D32" stop-opacity="0.6"/>
+                  </radialGradient>
+                </defs>
+                <ellipse cx="100" cy="100" rx="80" ry="50" fill="url(#leafGrad)" transform="rotate(-30 100 100)"/>
+                <line x1="100" y1="55" x2="100" y2="145" stroke="white" stroke-width="2" opacity="0.6"/>
+                <line x1="100" y1="90" x2="75" y2="75" stroke="white" stroke-width="1.5" opacity="0.5"/>
+                <line x1="100" y1="100" x2="80" y2="88" stroke="white" stroke-width="1.5" opacity="0.5"/>
+                <line x1="100" y1="90" x2="125" y2="75" stroke="white" stroke-width="1.5" opacity="0.5"/>
+                <line x1="100" y1="100" x2="120" y2="88" stroke="white" stroke-width="1.5" opacity="0.5"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         #vision-section – About / Mission / Vision
+    ═══════════════════════════════════════════════════════ -->
+    <section id="vision-section" aria-labelledby="vision-heading">
+      <div class="section-inner vision-grid">
+
+        <div class="vision-left">
+          <span class="section-eyebrow">Our Purpose</span>
+          <h2 id="vision-heading" class="section-heading">Why <em>Krishi Saathi</em> exists</h2>
+          <p class="section-body">
+            India's 100 million+ farming families face daily challenges that no one technology has solved holistically. Crop failures, lack of market intelligence, and inaccessible government support cost farmers billions every year.
+          </p>
+          <p class="section-body">
+            Krishi Saathi bridges the gap between cutting-edge AI and the hands that feed a nation — delivering actionable intelligence directly to farmers in their language, on their device.
+          </p>
+
+          <div class="problem-list">
+            <div class="problem-item">
+              <span class="problem-icon">⚠️</span>
+              <div>
+                <strong>Crop Disease</strong>
+                <p>30% of annual yield lost to undiagnosed diseases</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">🌧️</span>
+              <div>
+                <strong>Weather Uncertainty</strong>
+                <p>Erratic monsoons devastate unprepared farmers</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">📉</span>
+              <div>
+                <strong>Market Blindness</strong>
+                <p>Farmers sell at 40% below optimal market price</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">🏛️</span>
+              <div>
+                <strong>Scheme Ignorance</strong>
+                <p>60% of eligible farmers miss government benefits</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="vision-right">
+          <div class="mv-card">
+            <div class="mv-icon">🎯</div>
+            <h3>Mission</h3>
+            <p>Democratise agricultural intelligence for every Indian farmer — from small landholders to large agribusinesses — through accessible, accurate, and actionable AI tools.</p>
+          </div>
+          <div class="mv-card">
+            <div class="mv-icon">🌱</div>
+            <h3>Vision</h3>
+            <p>A future where no farmer makes a crop decision without data — where technology and tradition unite to build a resilient, prosperous agricultural economy.</p>
+          </div>
+          <div class="mv-card mv-card--accent">
+            <div class="mv-icon">🤝</div>
+            <h3>Promise</h3>
+            <p>Free core services, vernacular language support, and zero-internet offline mode for the 300 million farmers without reliable connectivity.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         #benefits-section – React dynamic cards
+    ═══════════════════════════════════════════════════════ -->
+    <section id="benefits-section" aria-labelledby="benefits-heading">
+      <div class="section-inner">
+        <div class="section-header centered">
+          <span class="section-eyebrow">Core Benefits</span>
+          <h2 id="benefits-heading" class="section-heading">Built for real farming challenges</h2>
+          <p class="section-subtext">Three pillars that make Krishi Saathi indispensable to modern agriculture.</p>
+        </div>
+        <!-- React mount point -->
+        <div id="benefits-cards-root"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         #workflow-section – React workflow steps
+    ═══════════════════════════════════════════════════════ -->
+    <section id="workflow-section" aria-labelledby="workflow-heading">
+      <div class="section-inner">
+        <div class="section-header centered">
+          <span class="section-eyebrow">How It Works</span>
+          <h2 id="workflow-heading" class="section-heading">From signup to smart insights in minutes</h2>
+        </div>
+        <!-- React mount point -->
+        <div id="workflow-root"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         #service-hub – React dynamic service grid
+    ═══════════════════════════════════════════════════════ -->
+    <section id="service-hub" aria-labelledby="services-heading">
+      <div class="section-inner">
+        <div class="section-header centered">
+          <span class="section-eyebrow">Service Hub</span>
+          <h2 id="services-heading" class="section-heading">Everything agriculture, one platform</h2>
+          <p class="section-subtext">Seven specialised tools, seamlessly integrated.</p>
+        </div>
+        <!-- React mount point -->
+        <div id="service-cards-root"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         Testimonials (pure HTML)
+    ═══════════════════════════════════════════════════════ -->
+    <section id="testimonials-section" aria-labelledby="testimonials-heading">
+      <div class="section-inner">
+        <div class="section-header centered">
+          <span class="section-eyebrow">Farmer Stories</span>
+          <h2 id="testimonials-heading" class="section-heading">Voices from the field</h2>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>"Krishi Saathi detected blight in my tomato crop before I could see it with my own eyes. Saved my entire harvest."</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">RS</div>
+              <div><strong>Ramesh Singh</strong><span>Wheat Farmer, Punjab</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card testimonial-card--featured">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>"I discovered three government schemes I qualified for but never knew about. Got ₹45,000 in subsidies thanks to this app."</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">PD</div>
+              <div><strong>Priya Devi</strong><span>Vegetable Farmer, Jharkhand</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>"The market price alerts help me sell at the right time. My income increased by 22% this season alone."</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">MK</div>
+              <div><strong>Mohan Kumar</strong><span>Rice Farmer, Chhattisgarh</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════
+       #support-center – Footer
+  ═══════════════════════════════════════════════════════ -->
+  <footer id="support-center" role="contentinfo">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="18" fill="url(#footerLogoGrad)"/>
+            <path d="M18 28 C18 28 9 21 9 14 C9 10 13 7 18 9 C23 7 27 10 27 14 C27 21 18 28 18 28Z" fill="white" opacity="0.9"/>
+            <path d="M18 10 L18 26" stroke="#2E7D32" stroke-width="2" stroke-linecap="round"/>
+            <path d="M18 16 L14 12" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M18 16 L22 12" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="36" y2="36">
+                <stop offset="0%" stop-color="#4CAF50"/>
+                <stop offset="100%" stop-color="#66BB6A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span>Krishi Saathi</span>
+        </div>
+        <p>Intelligent farming assistance for India's agricultural community. Free, accessible, and built with farmers in mind.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Twitter" class="social-link">𝕏</a>
+          <a href="#" aria-label="LinkedIn" class="social-link">in</a>
+          <a href="#" aria-label="Instagram" class="social-link">ig</a>
+          <a href="#" aria-label="YouTube" class="social-link">▶</a>
+        </div>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#service-hub">Crop Identification</a></li>
+            <li><a href="#service-hub">Disease Detection</a></li>
+            <li><a href="#service-hub">Weather Forecast</a></li>
+            <li><a href="#service-hub">Market Prices</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Smart Farming Guide</a></li>
+            <li><a href="#">Government Schemes</a></li>
+            <li><a href="#">Crop Calendar</a></li>
+            <li><a href="#">Soil Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:support@krishisaathi.in">support@krishisaathi.in</a></li>
+            <li><a href="tel:+911800KRISHI">1800-KRISHI (Toll Free)</a></li>
+            <li class="footer-address">Ranchi, Jharkhand, India</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Krishi Saathi. Made with 🌱 for Indian farmers.</p>
+      <p class="footer-tagline">Jai Kisan &nbsp;|&nbsp; जय किसान</p>
+    </div>
+  </footer>
+
+  <!-- Scripts: Vanilla JS + React components (Babel transpiles JSX inline) -->
+   <!-- removal of type = text/label that was taking bable parsing-->
+  <script src="script.js"></script>
+
+</body>
+</html>
