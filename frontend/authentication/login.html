@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — Krishi Saathi</title>
+  <meta name="description" content="Sign in to Krishi Saathi — your smart farming companion" />
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+
+  <!-- ── Animated background ───────────────────────────── -->
+  <div class="bg-field" aria-hidden="true">
+    <div class="leaf leaf-1"></div>
+    <div class="leaf leaf-2"></div>
+    <div class="leaf leaf-3"></div>
+  </div>
+
+  <!-- ── Auth wrapper ──────────────────────────────────── -->
+  <main class="auth-wrapper" role="main">
+
+    <!-- Brand -->
+    <div class="brand">
+      <div class="brand-icon" aria-hidden="true">🌾</div>
+      <div class="brand-name">Krishi Saathi</div>
+      <div class="brand-tagline">Smart Farming · Better Yields</div>
+    </div>
+
+    <!-- Card -->
+    <div class="auth-card">
+      <h2>Welcome back</h2>
+      <p class="subtitle">Sign in to check your farm dashboard, crop advice, and weather updates.</p>
+
+      <!-- Global alert -->
+      <div id="authAlert" class="alert alert-error" role="alert" aria-live="polite">
+        <span class="alert-icon" aria-hidden="true">⚠️</span>
+        <span class="alert-body"></span>
+      </div>
+
+      <!-- Login form -->
+      <form id="loginForm" novalidate autocomplete="on">
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">✉️</span>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+          <span class="field-msg" id="emailMsg" role="alert"></span>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">🔒</span>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            />
+            <button
+              type="button"
+              class="toggle-pw"
+              data-target="password"
+              aria-label="Show password"
+              title="Toggle password visibility"
+            >👁️</button>
+          </div>
+          <span class="field-msg" id="passwordMsg" role="alert"></span>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" id="loginBtn" class="btn-primary">
+          <div class="spinner" aria-hidden="true"></div>
+          <span class="btn-text">Sign In</span>
+        </button>
+
+      </form>
+
+      <!-- Seasonal strip -->
+      <div class="season-strip" aria-hidden="true">
+        <span>🌱 Kharif</span>
+        <span>🌾 Rabi</span>
+        <span>🌻 Zaid</span>
+      </div>
+
+    </div><!-- /auth-card -->
+
+    <!-- Footer link -->
+    <p class="auth-footer">
+      New farmer? <a href="signup.html">Create your account →</a>
+    </p>
+
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

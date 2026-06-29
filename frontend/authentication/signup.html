@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up — Krishi Saathi</title>
+  <meta name="description" content="Create your Krishi Saathi account and start farming smarter" />
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+
+  <!-- ── Animated background ───────────────────────────── -->
+  <div class="bg-field" aria-hidden="true">
+    <div class="leaf leaf-1"></div>
+    <div class="leaf leaf-2"></div>
+    <div class="leaf leaf-3"></div>
+  </div>
+
+  <!-- ── Auth wrapper ──────────────────────────────────── -->
+  <main class="auth-wrapper" role="main">
+
+    <!-- Brand -->
+    <div class="brand">
+      <div class="brand-icon" aria-hidden="true">🌾</div>
+      <div class="brand-name">Krishi Saathi</div>
+      <div class="brand-tagline">Smart Farming · Better Yields</div>
+    </div>
+
+    <!-- Card -->
+    <div class="auth-card">
+      <h2>Create your account</h2>
+      <p class="subtitle">Join thousands of farmers growing smarter with personalised crop advice and weather alerts.</p>
+
+      <!-- Global alert -->
+      <div id="authAlert" class="alert alert-error" role="alert" aria-live="polite">
+        <span class="alert-icon" aria-hidden="true">⚠️</span>
+        <span class="alert-body"></span>
+      </div>
+
+      <!-- Signup form -->
+      <form id="signupForm" novalidate autocomplete="on">
+
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">👤</span>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Ramesh Kumar"
+              autocomplete="name"
+              required
+            />
+          </div>
+          <span class="field-msg" id="nameMsg" role="alert"></span>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">✉️</span>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+          <span class="field-msg" id="emailMsg" role="alert"></span>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">🔒</span>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Minimum 6 characters"
+              autocomplete="new-password"
+              required
+            />
+            <button
+              type="button"
+              class="toggle-pw"
+              data-target="password"
+              aria-label="Show password"
+              title="Toggle password visibility"
+            >👁️</button>
+          </div>
+          <span class="field-msg" id="passwordMsg" role="alert"></span>
+        </div>
+
+        <div class="divider">Farm Details</div>
+
+        <!-- State & District (two-column) -->
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="state">State</label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">📍</span>
+              <select id="state" name="state" required>
+                <option value="" disabled selected>Select state</option>
+                <option value="andhra_pradesh">Andhra Pradesh</option>
+                <option value="assam">Assam</option>
+                <option value="bihar">Bihar</option>
+                <option value="chhattisgarh">Chhattisgarh</option>
+                <option value="gujarat">Gujarat</option>
+                <option value="haryana">Haryana</option>
+                <option value="himachal_pradesh">Himachal Pradesh</option>
+                <option value="jharkhand">Jharkhand</option>
+                <option value="karnataka">Karnataka</option>
+                <option value="kerala">Kerala</option>
+                <option value="madhya_pradesh">Madhya Pradesh</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="odisha">Odisha</option>
+                <option value="punjab">Punjab</option>
+                <option value="rajasthan">Rajasthan</option>
+                <option value="tamil_nadu">Tamil Nadu</option>
+                <option value="telangana">Telangana</option>
+                <option value="uttar_pradesh">Uttar Pradesh</option>
+                <option value="uttarakhand">Uttarakhand</option>
+                <option value="west_bengal">West Bengal</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <span class="field-msg" id="stateMsg" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="district">District</label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">🏘️</span>
+              <input
+                type="text"
+                id="district"
+                name="district"
+                placeholder="e.g. Nashik"
+                autocomplete="address-level2"
+                required
+              />
+            </div>
+            <span class="field-msg" id="districtMsg" role="alert"></span>
+          </div>
+
+        </div><!-- /form-row -->
+
+        <!-- Soil Type -->
+        <div class="form-group">
+          <label for="soil_type">Soil Type</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">🪱</span>
+            <select id="soil_type" name="soil_type" required>
+              <option value="" disabled selected>Select your soil type</option>
+              <option value="alluvial">Alluvial Soil — riverine plains</option>
+              <option value="black">Black / Regur Soil — cotton belt</option>
+              <option value="red">Red &amp; Yellow Soil — Deccan plateau</option>
+              <option value="laterite">Laterite Soil — heavy rainfall areas</option>
+              <option value="arid">Arid / Desert Soil — northwest</option>
+              <option value="forest">Forest / Mountain Soil — hilly terrain</option>
+              <option value="saline">Saline / Alkaline Soil</option>
+              <option value="peaty">Peaty / Marshy Soil</option>
+              <option value="other">Other / Not sure</option>
+            </select>
+          </div>
+          <span class="field-msg" id="soil_typeMsg" role="alert"></span>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" id="signupBtn" class="btn-primary">
+          <div class="spinner" aria-hidden="true"></div>
+          <span class="btn-text">Create Account</span>
+        </button>
+
+      </form>
+
+      <!-- Seasonal strip -->
+      <div class="season-strip" aria-hidden="true">
+        <span>🌱 Kharif</span>
+        <span>🌾 Rabi</span>
+        <span>🌻 Zaid</span>
+      </div>
+
+    </div><!-- /auth-card -->
+
+    <!-- Footer link -->
+    <p class="auth-footer">
+      Already have an account? <a href="login.html">Sign in →</a>
+    </p>
+
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>
